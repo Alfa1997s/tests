@@ -8,8 +8,9 @@ app = FastAPI()
 
 # test case for the leaked passwords
 @app.get('/check_leak')
-def check_leaked_passwords(password): 
-    hash=hashlib.md5(password.encode())
+def check_leaked_passwords(password):
+    checked = hash 
+    checked = hashlib.md5(password.encode())
     url="https://api.pwnedpasswords.com/range/{}".format(hash.hexdigest()[:5])
     response=requests.get(url).content
     if response:
