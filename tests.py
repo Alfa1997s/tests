@@ -23,7 +23,7 @@ class pms_functions(unittest.TestCase):
           
      def test_special_characters(self):
           home = default_server
-          password_lst = ["!","@","$","&"]
+          _ = ["!","@","$","&"]
           params = {'password':'mylestone@1897'}
           response = requests.get(f'{home}/check_specialcharacters',params=params)
           self.assertEqual(response.status_code, 200)
@@ -32,7 +32,7 @@ class pms_functions(unittest.TestCase):
 
      
      def test_update_policy(self):
-          polices_dct={"minLength":8,"maxLength":50,"specialCharacters":1,"upperCase":1,"lowerCase":1}
+          _ ={"minLength":8,"maxLength":50,"specialCharacters":1,"upperCase":1,"lowerCase":1}
           self.assertEqual(functions.updatePolicy("minLength",10),"Update Success")
 
      def test_genPass(self):
