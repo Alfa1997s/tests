@@ -38,7 +38,6 @@ class pms_functions(unittest.TestCase):
      def test_genPass(self):
           home = 'http://127.0.0.1:8000'
           response = requests.get(f'{home}/generatePassword')
-          #  params ={'password':'mylestone1897','minLength':8,'maxLength':50,"specialCharacters":1,"upperCase":1,"lowerCase":1}
           self.assertEqual(response.status_code,200) 
           
 if __name__ == '__main__':
