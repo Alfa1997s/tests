@@ -80,7 +80,7 @@ def generate_random_password():
 
     psswd_lst=[]
 
-    for i in range(max_length - 4):
+    for _ in range(max_length - 4):
         temp = temp + random.choice(all_combined)
 
     psswd_lst.extend(temp)
