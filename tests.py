@@ -14,7 +14,7 @@ class pms_functions(unittest.TestCase):
          
     
      def test_Password_length(self):
-   
+       home = default_server
        params = {'password': 'mylestone1897', 'min_length': 8, 'max_length': 50}
        response = requests.get(f'{home}/check_length', params=params)
        self.assertEqual(response.status_code, 200)
@@ -22,7 +22,7 @@ class pms_functions(unittest.TestCase):
  
           
      def test_special_characters(self):
-       
+          home = default_server
           password_lst = ["!","@","$","&"]
           params = {'password':'mylestone@1897'}
           response = requests.get(f'{home}/check_specialcharacters',params=params)
@@ -36,6 +36,7 @@ class pms_functions(unittest.TestCase):
           self.assertEqual(functions.updatePolicy("minLength",10),"Update Success")
 
      def test_genPass(self):
+          home = default_server
           response = requests.get(f'{home}/generatePassword')
           self.assertEqual(response.status_code,200) 
           
